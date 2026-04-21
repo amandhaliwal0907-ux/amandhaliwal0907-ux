@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Choose Your Path</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Share+Tech+Mono&family=Noto+Serif:ital,wght@0,400;1,400&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+
+<div id="curtain"></div>
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<div id="scene">
+
+  <!-- PRO SIDE -->
+  <div class="side side-pro" id="proSide">
+    <div class="pro-grid"></div>
+    <div class="pro-vignette"></div>
+    <span class="side-label">Portfolio</span>
+    <div class="pro-content">
+      <span class="pro-badge">Est. 2025 &nbsp;·&nbsp; Developer</span>
+      <h1 class="pro-title">Professional<br/>Mode</h1>
+      <div class="pro-rule"></div>
+      <p class="pro-sub">Projects, skills, and work experience. Curated for those who mean business.</p>
+      <a href="./professional/index.html" class="btn-pro">Enter Portfolio</a>
+    </div>
+  </div>
+
+  <!-- DIVIDER -->
+  <div id="divider"></div>
+
+  <!-- CENTER MARK -->
+  <div id="center-mark">
+    <span class="center-name">Your Name</span>
+    <div class="center-dot"></div>
+  </div>
+
+  <!-- FUN SIDE -->
+  <div class="side side-fun" id="funSide">
+    <div class="fun-noise"></div>
+    <div class="fun-scanlines"></div>
+    <span class="side-label">The Real One</span>
+    <div class="fun-content">
+      <span class="fun-eyebrow">[ Unlocked ]</span>
+      <h1 class="fun-title" data-text="The Fun Side">The Fun Side</h1>
+      <div class="fun-tags">
+        <span class="fun-tag">League of Legends</span>
+        <span class="fun-tag">CS2</span>
+        <span class="fun-tag">Rust</span>
+        <span class="fun-tag">Naruto</span>
+      </div>
+      <p class="fun-sub">The real me. No suit required.<br/>Chaos, games, and vibes only.</p>
+      <a href="./fun/index.html" class="btn-fun">[ Enter ]</a>
+    </div>
+  </div>
+
+</div>
+
+<div id="instruction">hover to preview &nbsp;·&nbsp; click to enter</div>
+
+<script>
+  // cursor dot follows mouse exactly
+  const cursor = document.getElementById('cursor');
+  const ring   = document.getElementById('cursor-ring');
+  let mx = 0, my = 0, rx = 0, ry = 0;
+
+  document.addEventListener('mousemove', e => {
+    mx = e.clientX; my = e.clientY;
+    cursor.style.left = mx + 'px';
+    cursor.style.top  = my + 'px';
+  });
+
+  // ring lags behind for smooth feel
+  (function animRing() {
+    rx += (mx - rx) * 0.12;
+    ry += (my - ry) * 0.12;
+    ring.style.left = rx + 'px';
+    ring.style.top  = ry + 'px';
+    requestAnimationFrame(animRing);
+  })();
+
+  // expand side on hover
+  const scene   = document.getElementById('scene');
+  const proSide = document.getElementById('proSide');
+  const funSide = document.getElementById('funSide');
+
+  proSide.addEventListener('mouseenter', () => scene.classList.add('hover-pro'));
+  proSide.addEventListener('mouseleave', () => scene.classList.remove('hover-pro'));
+  funSide.addEventListener('mouseenter', () => { scene.classList.remove('hover-pro'); scene.classList.add('hover-fun'); });
+  funSide.addEventListener('mouseleave', () => scene.classList.remove('hover-fun'));
+
+  // ring color changes per side
+  proSide.addEventListener('mouseenter', () => { ring.style.borderColor = 'rgba(201,168,76,0.7)'; });
+  proSide.addEventListener('mouseleave', () => { ring.style.borderColor = 'rgba(255,255,255,0.5)'; });
+  funSide.addEventListener('mouseenter', () => { ring.style.borderColor = 'rgba(0,229,255,0.7)'; });
+  funSide.addEventListener('mouseleave', () => { ring.style.borderColor = 'rgba(255,255,255,0.5)'; });
+
+  // ring grows on links
+  document.querySelectorAll('a').forEach(el => {
+    el.addEventListener('mouseenter', () => { ring.style.width = '60px'; ring.style.height = '60px'; });
+    el.addEventListener('mouseleave', () => { ring.style.width = '36px'; ring.style.height = '36px'; });
+  });
+
+  // gold particles for pro side
+  for (let i = 0; i < 22; i++) {
+    const p = document.createElement('div');
+    p.className = 'pro-particle';
+    const x = Math.random() * 100;
+    p.style.cssText = `
+      left: ${x}%;
+      --sx: ${(Math.random() - 0.5) * 20}px;
+      --drift: ${(Math.random() - 0.5) * 60}px;
+      --dur: ${4 + Math.random() * 8}s;
+      --delay: ${Math.random() * 8}s;
+      width: ${1 + Math.random() * 3}px;
+      height: ${1 + Math.random() * 3}px;
+    `;
+    proSide.appendChild(p);
+  }
+
+  // floating pixels for fun side
+  const funColors = ['#ff3c3c','#00e5ff','#b44fff','#ff9f0a','#fff'];
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.className = 'fun-pixel';
+    const s = 2 + Math.random() * 5;
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      top:  ${Math.random() * 100}%;
+      width:  ${s}px; height: ${s}px;
+      background: ${funColors[Math.floor(Math.random() * funColors.length)]};
+      --dur: ${3 + Math.random() * 7}s;
+      --delay: ${Math.random() * 5}s;
+      --tx: ${(Math.random() - 0.5) * 30}px;
+      --ty: ${(Math.random() - 0.5) * 30}px;
+      --op: ${0.1 + Math.random() * 0.4};
+    `;
+    funSide.appendChild(p);
+  }
+</script>
+</body>
+</html>
