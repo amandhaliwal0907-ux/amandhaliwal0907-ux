@@ -330,7 +330,6 @@ proBtn.onclick = () => {
 
 /* navigation */
 window.showProSection = function(id){
-  document.getElementById("pro").scrollTop = 0;
   document.getElementById("pro-landing").style.display="none";
   document.querySelectorAll(".pro-section").forEach(s=>s.classList.remove("active","visible"));
   const t=document.getElementById(id);
@@ -339,7 +338,6 @@ window.showProSection = function(id){
 };
 
 window.showProLanding = function(){
-  document.getElementById("pro").scrollTop = 0;
   document.querySelectorAll(".pro-section").forEach(s=>s.classList.remove("active","visible"));
   document.getElementById("pro-landing").style.display="flex";
 };
