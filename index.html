@@ -4,7 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aman Dhaliwal</title>
-
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
@@ -16,10 +15,9 @@
 }
 </script>
 </head>
-
 <body>
 
-<!-- LANDING -->
+<!-- landing section -->
 <canvas id="smoke"></canvas>
 <audio id="audio" src="asong.mp3" preload="auto"></audio>
 
@@ -41,7 +39,7 @@
   </div>
 </div>
 
-<!-- PROFESSIONAL -->
+<!-- professional section -->
 <div id="pro">
   <nav class="pro-nav">
     <span class="pro-nav-name" onclick="showProLanding()">AD</span>
@@ -57,12 +55,11 @@
 
   <div class="pro-inner">
 
-    <!-- landing -->
+    <!-- pro landing -->
     <div id="pro-landing">
       <p class="pro-landing-sub">Portfolio</p>
       <h2 class="pro-landing-title">Aman Dhaliwal</h2>
-      <p class="pro-landing-sub">Computing Science · Software Developer</p>
-
+      <p class="pro-landing-sub" style="margin-bottom:3rem">Computing Science · Software Developer</p>
       <div class="pro-nav-buttons">
         <button class="pro-nav-btn" onclick="showProSection('about')">About</button>
         <button class="pro-nav-btn" onclick="showProSection('experience')">Experience</button>
@@ -72,39 +69,31 @@
       </div>
     </div>
 
-    <!-- ABOUT -->
+    <!-- about -->
     <section id="about" class="pro-section">
       <p class="section-label">01 / About</p>
       <h2 class="section-title">Who I Am</h2>
       <div class="divider"></div>
-
       <div class="about-grid">
         <div class="about-bio">
-          <p>I'm a <span>Computing Science</span> graduate from Thompson Rivers University. I build software across full-stack AI systems, security tools, and machine learning projects.</p>
-
-          <p>I focus on building complete working systems from start to finish rather than isolated prototypes.</p>
-
+          <p>I'm a <span>Computing Science</span> graduate from Thompson Rivers University. I build software spanning full-stack AI platforms, security tools, and machine learning systems.</p>
+          <p>My work tends to be practical and end to end. I care about shipping something that actually runs, not just something that looks good in a notebook.</p>
           <p>Currently open to <span>new grad opportunities</span> in software development, ML engineering, or full-stack roles.</p>
-
-          <p>Outside of work I enjoy the gym, travelling, video games, and anime.</p>
+          <p>Outside of work, I’m into the gym, sports, video games, and anime.</p>
         </div>
-
         <div class="about-details">
           <div class="detail-block">
             <p class="detail-label">Location</p>
             <p class="detail-value">British Columbia, Canada</p>
           </div>
-
           <div class="detail-block">
             <p class="detail-label">Education</p>
-            <p class="detail-value">B.Sc. Computing Science</p>
+            <p class="detail-value">B.Sc. Computing Science<br><span style="color:var(--muted);font-size:0.85em">Thompson Rivers University</span></p>
           </div>
-
           <div class="detail-block">
             <p class="detail-label">Email</p>
             <p class="detail-value">AmanDhaliwal0907@gmail.com</p>
           </div>
-
           <div class="detail-block">
             <p class="detail-label">Status</p>
             <p class="detail-value" style="color:var(--blue)">Open to opportunities</p>
@@ -113,7 +102,7 @@
       </div>
     </section>
 
-    <!-- EXPERIENCE -->
+    <!-- experience -->
     <section id="experience" class="pro-section">
       <p class="section-label">02 / Experience</p>
       <h2 class="section-title">Work History</h2>
@@ -125,41 +114,63 @@
           <p class="exp-role">IT Helpdesk Technician</p>
           <p class="exp-company">Archway Community Services</p>
           <ul class="exp-bullets">
-            <li>Resolved 80+ support tickets via Autotask.</li>
-            <li>Configured laptops, printers, and network systems.</li>
-            <li>Maintained Azure, Intune, and Active Directory infrastructure.</li>
+            <li>Resolved 80+ support tickets by triaging and escalating issues via Autotask, improving team response efficiency.</li>
+            <li>Configured and deployed laptops, printers, projectors, and VLAN segments, ensuring uninterrupted operations during onboarding.</li>
+            <li>Maintained network infrastructure using Microsoft Azure, Sophos, Intune, and Active Directory, sustaining secure daily operations.</li>
           </ul>
         </div>
       </div>
+
+      <div class="edu-block">
+        <p class="edu-label">Education</p>
+        <p class="edu-degree">Bachelor of Computing Science</p>
+        <p class="edu-school">Thompson Rivers University · Sep 2020 - Apr 2026 · Kamloops, BC</p>
+      </div>
     </section>
 
-    <!-- PROJECTS -->
+    <!-- projects -->
     <section id="projects" class="pro-section">
       <p class="section-label">03 / Projects</p>
       <h2 class="section-title">Selected Work</h2>
       <div class="divider"></div>
-
       <div class="projects-grid">
+
         <div class="project-card">
-          <p class="project-name">AI Emergency Checklist System</p>
-          <p class="project-stack">React · Python · OpenAI</p>
-          <p class="project-desc">Full-stack AI system converting emergency procedures into structured interactive workflows.</p>
+          <p class="project-name">Conversational AI for Emergency Checklists</p>
+          <p class="project-stack">React · Supabase · OpenAI · Python</p>
+          <p class="project-desc">Full-stack AI platform for Innomergence Solutions converting static emergency checklists into machine-interpretable primitives. Multimodal agent with voice and text, dual-model script generation with automated cross-validation, and Runway AI integration producing verified 60-second training videos.</p>
+          <p class="project-date">Jan 2026 - Apr 2026</p>
         </div>
 
         <div class="project-card">
           <p class="project-name">SQLi Scout</p>
-          <p class="project-stack">Python · PyQt5 · Docker</p>
-          <p class="project-desc">SQL injection scanner with GUI and multi-database support.</p>
+          <p class="project-stack">Python · PyQt5 · Docker · PyInstaller</p>
+          <p class="project-desc">Zero-install SQL injection scanner with a GUI for vulnerability assessment without a security background. Four detection methods across five database dialects, 78 vulnerabilities found against OWASP Juice Shop with zero false positives.</p>
+          <p class="project-date">Jan 2026 - Present</p>
         </div>
+
+        <div class="project-card">
+          <p class="project-name">Employment Outcomes Predictor</p>
+          <p class="project-stack">Python · scikit-learn · pandas · SMOTE</p>
+          <p class="project-desc">Binary classification pipeline on 19,666 labour force records. SMOTE used to handle imbalance. Decision Tree reached 72 percent accuracy with strong F1 score.</p>
+          <p class="project-date">Jan 2026 - Present</p>
+        </div>
+
+        <div class="project-card">
+          <p class="project-name">League of Legends Win Predictor</p>
+          <p class="project-stack">Python · scikit-learn · pandas</p>
+          <p class="project-desc">Trained multiple models on 80,000 match records. Gradient Boosting reached 87.68 percent accuracy. Analysis showed deaths and assists were stronger predictors than kills.</p>
+          <p class="project-date">Sep 2025 - Dec 2025</p>
+        </div>
+
       </div>
     </section>
 
-    <!-- SKILLS -->
+    <!-- skills -->
     <section id="skills" class="pro-section">
       <p class="section-label">04 / Skills</p>
       <h2 class="section-title">Technical Stack</h2>
       <div class="divider"></div>
-
       <div class="skills-grid">
         <div class="skill-group">
           <p class="skill-group-label">Languages</p>
@@ -168,17 +179,39 @@
             <span class="skill-tag">Python</span>
             <span class="skill-tag">SQL</span>
             <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">TypeScript</span>
+            <span class="skill-tag">HTML / CSS</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-label">Frameworks</p>
+          <div class="skill-tags">
+            <span class="skill-tag">React</span>
+            <span class="skill-tag">Node.js</span>
+            <span class="skill-tag">PyQt5</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <p class="skill-group-label">Tools</p>
+          <div class="skill-tags">
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">VS Code</span>
+            <span class="skill-tag">Supabase</span>
+            <span class="skill-tag">Azure</span>
+            <span class="skill-tag">OpenAI API</span>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT -->
+    <!-- contact -->
     <section id="contact" class="pro-section">
       <p class="section-label">05 / Contact</p>
       <h2 class="section-title">Get In Touch</h2>
       <div class="divider"></div>
-
       <div class="contact-grid">
         <a class="contact-card" href="mailto:AmanDhaliwal0907@gmail.com">
           <span class="contact-type">Email</span>
@@ -191,41 +224,134 @@
 </div>
 
 <script type="module">
-import * as THREE from "three";
+import * as THREE from 'three';
 
-/* PRO TOGGLE FIX */
+/* smoke */
+const smokeCanvas = document.getElementById("smoke");
+const ctx = smokeCanvas.getContext("2d");
+smokeCanvas.width = innerWidth;
+smokeCanvas.height = innerHeight;
+
+class P {
+  constructor(){ this.reset(); }
+  reset(){
+    this.x = Math.random()*innerWidth;
+    this.y = Math.random()*innerHeight;
+    this.s = Math.random()*120+60;
+    this.vy = -(Math.random()*0.3+0.1);
+    this.o = 0;
+  }
+  update(){ this.y+=this.vy; this.o+=0.002; if(this.y<0)this.reset(); }
+  draw(){
+    const g = ctx.createRadialGradient(this.x,this.y,0,this.x,this.y,this.s);
+    g.addColorStop(0,`rgba(200,200,200,${this.o})`);
+    g.addColorStop(1,"transparent");
+    ctx.fillStyle=g;
+    ctx.beginPath();
+    ctx.arc(this.x,this.y,this.s,0,Math.PI*2);
+    ctx.fill();
+  }
+}
+
+const pts = Array.from({length:30},()=>new P());
+(function loop(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  pts.forEach(p=>{p.update();p.draw();});
+  requestAnimationFrame(loop);
+})();
+
+/* three cube */
+const canvas = document.getElementById("threeCanvas");
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(60,innerWidth/innerHeight,0.1,1000);
+camera.position.z = 4;
+
+const renderer = new THREE.WebGLRenderer({canvas,alpha:true});
+renderer.setSize(innerWidth,innerHeight);
+
+const cube = new THREE.LineSegments(
+  new THREE.EdgesGeometry(new THREE.BoxGeometry(1.2,1.2,1.2)),
+  new THREE.LineBasicMaterial({color:0x33ccff})
+);
+scene.add(cube);
+
+(function anim(){
+  requestAnimationFrame(anim);
+  cube.rotation.x+=0.006;
+  cube.rotation.y+=0.01;
+  renderer.render(scene,camera);
+})();
+
+/* fun button */
+const funBtn = document.querySelector(".funBtn");
+const funBg = document.getElementById("funBg");
+const funVideo = document.getElementById("funVideo");
+
+funBtn.onmouseenter = () => {
+  funBg.style.opacity="1";
+  funVideo.play();
+  funBtn.classList.add("redGlow");
+};
+
+funBtn.onmouseleave = () => {
+  funBg.style.opacity="0";
+  funVideo.pause();
+  funBtn.classList.remove("redGlow");
+};
+
+funBtn.onclick = () => {
+  window.location.href="fun/index.html";
+};
+
+/* pro button */
+const proBtn = document.querySelector(".proBtn");
 const pro = document.getElementById("pro");
 
-document.querySelector(".proBtn").onclick = () => {
-  document.body.classList.add("pro-active");
-  pro.classList.add("visible");
+proBtn.onmouseenter = () => {
+  document.getElementById("proBg").style.opacity="1";
+  document.getElementById("threeCanvas").style.opacity="1";
 };
 
-window.goBackToLanding = function () {
-  pro.classList.remove("visible");
-
-  setTimeout(() => {
-    document.body.classList.remove("pro-active");
-  }, 400);
+proBtn.onmouseleave = () => {
+  document.getElementById("proBg").style.opacity="0";
+  document.getElementById("threeCanvas").style.opacity="0";
 };
 
+proBtn.onclick = () => {
+  document.getElementById("landing").style.display="none";
+  document.getElementById("smoke").style.display="none";
+  document.getElementById("funBg").style.display="none";
+  document.getElementById("proBg").style.display="none";
+  document.getElementById("threeCanvas").style.display="none";
+
+  pro.style.display="block";
+  requestAnimationFrame(()=>pro.classList.add("visible"));
+};
+
+/* navigation */
 window.showProSection = function(id){
-  document.querySelectorAll(".pro-section").forEach(s => {
-    s.classList.remove("active","visible");
-  });
-
-  document.getElementById("pro-landing").style.display = "none";
-
-  const t = document.getElementById(id);
+  document.getElementById("pro-landing").style.display="none";
+  document.querySelectorAll(".pro-section").forEach(s=>s.classList.remove("active","visible"));
+  const t=document.getElementById(id);
   t.classList.add("active");
-  requestAnimationFrame(() => t.classList.add("visible"));
+  requestAnimationFrame(()=>t.classList.add("visible"));
 };
 
 window.showProLanding = function(){
-  document.querySelectorAll(".pro-section").forEach(s => {
-    s.classList.remove("active","visible");
-  });
-  document.getElementById("pro-landing").style.display = "flex";
+  document.querySelectorAll(".pro-section").forEach(s=>s.classList.remove("active","visible"));
+  document.getElementById("pro-landing").style.display="flex";
+};
+
+window.goBackToLanding = function(){
+  pro.classList.remove("visible");
+  setTimeout(()=>{
+    pro.style.display="none";
+    document.getElementById("landing").style.display="block";
+    document.getElementById("smoke").style.display="block";
+    document.getElementById("funBg").style.display="block";
+    document.getElementById("proBg").style.display="block";
+    document.getElementById("threeCanvas").style.display="block";
+  },400);
 };
 </script>
 

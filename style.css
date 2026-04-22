@@ -742,14 +742,4 @@ canvas#smoke {
     .buttons { gap: 2rem; }
   }
 
-  body.pro-active #landing,
-body.pro-active #smoke,
-body.pro-active #funBg,
-body.pro-active #proBg,
-body.pro-active #threeCanvas {
-  display: none !important;
-}
-
-body.pro-active #pro {
-  display: block;
-}
+  
