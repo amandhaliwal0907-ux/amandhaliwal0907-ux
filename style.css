@@ -1,0 +1,139 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  background: #0d0d0d;
+  font-family: 'Inter', sans-serif;
+}
+
+/* =====================
+   SMOKE
+===================== */
+canvas#smoke {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+}
+
+/* =====================
+   THREE.JS LAYER
+===================== */
+#threeCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  z-index: 4;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* =====================
+   FUN
+===================== */
+#funBg {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  opacity: 0;
+  transition: 0.3s ease;
+  pointer-events: none;
+}
+
+#funBg video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.45) saturate(1.6);
+}
+
+/* =====================
+   PRO GRID
+===================== */
+#proBg {
+  position: fixed;
+  inset: 0;
+  z-index: 2;
+  opacity: 0;
+  transition: 0.3s ease;
+
+  background: #050b18;
+  background-image:
+    linear-gradient(rgba(0,90,180,0.15) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0,90,180,0.15) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+/* =====================
+   UI
+===================== */
+.content {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  top: 40%;
+  transform: translateY(-50%);
+}
+
+.name {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2.8rem, 5vw, 4.2rem);
+  letter-spacing: 0.22em;
+  color: rgba(255,255,255,0.92);
+}
+
+.subtitle {
+  font-size: 0.78rem;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.38);
+  margin-bottom: 3rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.btn {
+  width: 220px;
+  height: 70px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: 'Cinzel', serif;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+
+  color: rgba(255,255,255,0.78);
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.18);
+
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  transform: translateY(-3px) scale(1.05);
+}
+
+/* FUN */
+.redGlow {
+  border-color: rgba(255,0,0,0.8);
+  box-shadow: 0 0 20px rgba(255,0,0,0.5);
+}
+
+/* PRO */
+.blueActive {
+  border-color: #33ccff;
+  box-shadow: 0 0 20px rgba(51,204,255,0.4);
+}
