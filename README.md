@@ -13,14 +13,6 @@
 
 <br>
 
-<picture>
-  <img
-    align="right"
-    width="34%"
-    src="http://github-profile-summary-cards.vercel.app/api/cards/stats?username=amandhaliwal0907-ux&theme=holi"
-  />
-</picture>
-
 Computing Science grad from Thompson Rivers University, BC. I get a lot out of picking up new things and working through problems that actually take some effort. Most of my projects lean into machine learning because I like that the output is something useful, not just functional.
 
 Outside of that I play League of Legends at Master rank and CS2 at Faceit Level 9.
@@ -31,6 +23,8 @@ Outside of that I play League of Legends at Master rank and CS2 at Faceit Level 
 - Wrapping my employment outcomes ML model in a Spring Boot API with an LLM layer that explains predictions in plain language
 
 ---
+
+[![Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=amandhaliwal0907-ux&theme=holi)](https://github.com/amandhaliwal0907-ux)
 
 [![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=amandhaliwal0907-ux&langs_count=6&theme=tokyonight&bg_color=0d1117&title_color=33ccff&hide_border=true)](https://github.com/amandhaliwal0907-ux)
 
