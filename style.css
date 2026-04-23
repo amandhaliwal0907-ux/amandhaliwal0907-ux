@@ -18,7 +18,8 @@
     font-family: 'DM Sans', sans-serif;
   }
 
-  /* ===================== LANDING ===================== */
+  /* landing page layers */
+
   canvas#smoke {
     position: fixed;
     inset: 0;
@@ -52,6 +53,7 @@
     filter: brightness(0.45) saturate(1.6);
   }
 
+  /* grid background shown on pro button hover */
   #proBg {
     position: fixed;
     inset: 0;
@@ -65,6 +67,7 @@
     background-size: 40px 40px;
   }
 
+  /* landing content */
   #landing {
     position: relative;
     z-index: 10;
@@ -115,7 +118,7 @@
   .redGlow { border-color: rgba(255,0,0,0.8); box-shadow: 0 0 20px rgba(255,0,0,0.5); }
   .blueActive { border-color: #33ccff; box-shadow: 0 0 20px rgba(51,204,255,0.4); }
 
-  /* ===================== PROFESSIONAL ===================== */
+  /* professional section - fixed overlay that fades in */
   #pro {
     display: none;
     position: fixed;
@@ -129,6 +132,7 @@
 
   #pro.visible { opacity: 1; }
 
+  /* subtle grid texture behind pro content */
   #pro::before {
     content: '';
     position: fixed;
@@ -141,6 +145,7 @@
     z-index: 0;
   }
 
+  /* sticky nav */
   .pro-nav {
     position: sticky;
     top: 0;
@@ -201,6 +206,7 @@
 
   .pro-inner { position: relative; z-index: 1; }
 
+  /* pro landing - the button chooser screen */
   #pro-landing {
     display: flex;
     flex-direction: column;
@@ -258,6 +264,7 @@
     color: var(--blue);
   }
 
+  /* each content section - hidden by default, fades in when active */
   .pro-section {
     display: none;
     opacity: 0;
@@ -297,6 +304,7 @@
     box-shadow: 0 0 8px var(--blue);
   }
 
+  /* about */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -329,6 +337,7 @@
 
   .detail-value { font-size: 0.92rem; color: var(--white); }
 
+  /* experience */
   .exp-item {
     display: grid;
     grid-template-columns: 180px 1fr;
@@ -411,7 +420,7 @@
 
   .edu-school { font-size: 0.84rem; color: var(--muted); }
 
-  /* ===================== PROJECTS ===================== */
+  /* projects grid */
   .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -432,6 +441,7 @@
     cursor: pointer;
   }
 
+  /* blue line that sweeps in from left on hover */
   .project-card::before {
     content: '';
     position: absolute;
@@ -451,6 +461,7 @@
 
   .project-card-wrap:hover .project-card::before { transform: scaleX(1); }
 
+  /* hint text that appears on hover */
   .project-hint {
     font-family: 'DM Mono', monospace;
     font-size: 0.6rem;
@@ -494,7 +505,7 @@
     letter-spacing: 0.1em;
   }
 
-  /* ===================== PROJECT POPUP ===================== */
+  /* project detail popup */
   .project-popup {
     display: none;
     position: fixed;
@@ -642,7 +653,7 @@
     padding: 0.25rem 0.6rem;
   }
 
-  /* ===================== SKILLS ===================== */
+  /* skills */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -683,7 +694,7 @@
     color: var(--blue);
   }
 
-  /* ===================== CONTACT ===================== */
+  /* contact */
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -755,20 +766,21 @@
     .popup-box { padding: 1.8rem; }
   }
 
-.proBtn {
-  position: relative;
-}
+  /* blue border sweep on pro button hover */
+  .proBtn {
+    position: relative;
+  }
 
-.proBtn::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border: 1px solid var(--blue);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.45s ease;
-}
+  .proBtn::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border: 1px solid var(--blue);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.45s ease;
+  }
 
-.proBtn:hover::before {
-  transform: scaleX(1);
-}
+  .proBtn:hover::before {
+    transform: scaleX(1);
+  }
