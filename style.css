@@ -115,147 +115,7 @@
   .redGlow { border-color: rgba(255,0,0,0.8); box-shadow: 0 0 20px rgba(255,0,0,0.5); }
   .blueActive { border-color: #33ccff; box-shadow: 0 0 20px rgba(51,204,255,0.4); }
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  overflow: hidden;
-  background: #0d0d0d;
-  font-family: 'Inter', sans-serif;
-}
-
-/* =====================
-   SMOKE
-===================== */
-canvas#smoke {
-  position: fixed;
-  inset: 0;
-  z-index: 0;
-}
-
-/* =====================
-   THREE.JS LAYER
-===================== */
-#threeCanvas {
-  position: fixed;
-  inset: 0;
-  width: 100% !important;
-  height: 100% !important;
-  z-index: 4;
-  pointer-events: none;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-/* =====================
-   FUN
-===================== */
-#funBg {
-  position: fixed;
-  inset: 0;
-  z-index: 1;
-  opacity: 0;
-  transition: 0.3s ease;
-  pointer-events: none;
-}
-
-#funBg video {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.45) saturate(1.6);
-}
-
-/* =====================
-   PRO GRID
-===================== */
-#proBg {
-  position: fixed;
-  inset: 0;
-  z-index: 2;
-  opacity: 0;
-  transition: 0.3s ease;
-
-  background: #050b18;
-  background-image:
-    linear-gradient(rgba(0,90,180,0.15) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0,90,180,0.15) 1px, transparent 1px);
-  background-size: 40px 40px;
-}
-
-/* =====================
-   UI
-===================== */
-.content {
-  position: relative;
-  z-index: 10;
-  text-align: center;
-  top: 40%;
-  transform: translateY(-50%);
-}
-
-.name {
-  font-family: 'Cinzel', serif;
-  font-size: clamp(2.8rem, 5vw, 4.2rem);
-  letter-spacing: 0.22em;
-  color: rgba(255,255,255,0.92);
-}
-
-.subtitle {
-  font-size: 0.78rem;
-  letter-spacing: 0.55em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.38);
-  margin-bottom: 3rem;
-}
-
-.buttons {
-  display: flex;
-  justify-content: center;
-  gap: 6rem;
-}
-
-.btn {
-  width: 220px;
-  height: 70px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-family: 'Cinzel', serif;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-
-  color: rgba(255,255,255,0.78);
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.18);
-
-  cursor: pointer;
-  transition: 0.25s ease;
-}
-
-.btn:hover {
-  transform: translateY(-3px) scale(1.05);
-}
-
-/* FUN */
-.redGlow {
-  border-color: rgba(255,0,0,0.8);
-  box-shadow: 0 0 20px rgba(255,0,0,0.5);
-}
-
-/* PRO */
-.blueActive {
-  border-color: #33ccff;
-  box-shadow: 0 0 20px rgba(51,204,255,0.4);
-}
-
-/* ===================== PROFESSIONAL ===================== */
+  /* ===================== PROFESSIONAL ===================== */
   #pro {
     display: none;
     position: fixed;
@@ -267,11 +127,8 @@ canvas#smoke {
     transition: opacity 0.5s ease;
   }
 
-  #pro.visible {
-    opacity: 1;
-  }
+  #pro.visible { opacity: 1; }
 
-  /* Grid bg for pro */
   #pro::before {
     content: '';
     position: fixed;
@@ -284,7 +141,6 @@ canvas#smoke {
     z-index: 0;
   }
 
-  /* NAV */
   .pro-nav {
     position: sticky;
     top: 0;
@@ -343,13 +199,8 @@ canvas#smoke {
   .pro-nav-back:hover { color: var(--blue); }
   .pro-nav-back::before { content: '←'; }
 
-  /* PRO INNER */
-  .pro-inner {
-    position: relative;
-    z-index: 1;
-  }
+  .pro-inner { position: relative; z-index: 1; }
 
-  /* PRO LANDING (button chooser) */
   #pro-landing {
     display: flex;
     flex-direction: column;
@@ -407,7 +258,6 @@ canvas#smoke {
     color: var(--blue);
   }
 
-  /* SECTIONS */
   .pro-section {
     display: none;
     opacity: 0;
@@ -447,7 +297,6 @@ canvas#smoke {
     box-shadow: 0 0 8px var(--blue);
   }
 
-  /* ABOUT */
   .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -462,7 +311,6 @@ canvas#smoke {
   }
 
   .about-bio p span { color: var(--blue); }
-
   .about-details { display: flex; flex-direction: column; gap: 1.5rem; }
 
   .detail-block {
@@ -481,7 +329,6 @@ canvas#smoke {
 
   .detail-value { font-size: 0.92rem; color: var(--white); }
 
-  /* EXPERIENCE */
   .exp-item {
     display: grid;
     grid-template-columns: 180px 1fr;
@@ -525,12 +372,12 @@ canvas#smoke {
     font-size: 0.88rem;
     color: rgba(255,255,255,0.65);
     line-height: 1.7;
-    padding-left: 1rem;
+    padding-left: 1.2rem;
     position: relative;
   }
 
   .exp-bullets li::before {
-    content: '—';
+    content: '/';
     position: absolute;
     left: 0;
     color: var(--blue);
@@ -564,11 +411,15 @@ canvas#smoke {
 
   .edu-school { font-size: 0.84rem; color: var(--muted); }
 
-  /* PROJECTS */
+  /* ===================== PROJECTS ===================== */
   .projects-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
+  }
+
+  .project-card-wrap {
+    position: relative;
   }
 
   .project-card {
@@ -578,6 +429,7 @@ canvas#smoke {
     transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
   }
 
   .project-card::before {
@@ -591,13 +443,25 @@ canvas#smoke {
     transition: transform 0.35s ease;
   }
 
-  .project-card:hover {
+  .project-card-wrap:hover .project-card {
     border-color: var(--blue-border);
-    box-shadow: 0 0 30px rgba(51,204,255,0.08);
+    box-shadow: 0 0 30px rgba(51,204,255,0.12);
     transform: translateY(-3px);
   }
 
-  .project-card:hover::before { transform: scaleX(1); }
+  .project-card-wrap:hover .project-card::before { transform: scaleX(1); }
+
+  .project-hint {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 1.2rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+  .project-card-wrap:hover .project-hint { opacity: 1; }
 
   .project-name {
     font-family: 'Cinzel', serif;
@@ -630,7 +494,155 @@ canvas#smoke {
     letter-spacing: 0.1em;
   }
 
-  /* SKILLS */
+  /* ===================== PROJECT POPUP ===================== */
+  .project-popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 200;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    background: rgba(4, 8, 16, 0.85);
+    backdrop-filter: blur(6px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-popup.open {
+    display: flex;
+    opacity: 1;
+  }
+
+  .popup-box {
+    background: var(--bg2);
+    border: 1px solid var(--blue-border);
+    box-shadow: 0 0 60px rgba(51,204,255,0.12);
+    max-width: 780px;
+    width: 100%;
+    max-height: 85vh;
+    overflow-y: auto;
+    padding: 2.5rem;
+    position: relative;
+    animation: popupIn 0.3s ease forwards;
+  }
+
+  @keyframes popupIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .popup-close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.4rem;
+    font-family: 'DM Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color 0.2s;
+    text-transform: uppercase;
+  }
+  .popup-close:hover { color: var(--blue); }
+
+  .popup-header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.5rem;
+  }
+
+  .popup-title {
+    font-family: 'Cinzel', serif;
+    font-size: 1.3rem;
+    letter-spacing: 0.1em;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .popup-stack {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    color: var(--blue);
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+
+  .popup-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--blue);
+    margin-bottom: 1.8rem;
+    box-shadow: 0 0 6px var(--blue);
+  }
+
+  .popup-section-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: var(--blue);
+    margin-bottom: 0.6rem;
+    margin-top: 1.6rem;
+  }
+
+  .popup-section-title:first-of-type { margin-top: 0; }
+
+  .popup-text {
+    font-size: 0.86rem;
+    color: rgba(255,255,255,0.65);
+    line-height: 1.8;
+    margin-bottom: 0.5rem;
+  }
+
+  .popup-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .popup-bullets li {
+    font-size: 0.84rem;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.7;
+    padding-left: 1.2rem;
+    position: relative;
+  }
+
+  .popup-bullets li::before {
+    content: '/';
+    position: absolute;
+    left: 0;
+    color: var(--blue);
+    font-size: 0.7rem;
+  }
+
+  .popup-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+
+  .popup-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.08em;
+    color: rgba(255,255,255,0.72);
+    background: rgba(51,204,255,0.06);
+    border: 1px solid rgba(51,204,255,0.15);
+    padding: 0.25rem 0.6rem;
+  }
+
+  /* ===================== SKILLS ===================== */
   .skills-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -671,7 +683,7 @@ canvas#smoke {
     color: var(--blue);
   }
 
-  /* CONTACT */
+  /* ===================== CONTACT ===================== */
   .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -740,6 +752,23 @@ canvas#smoke {
     .exp-item { grid-template-columns: 1fr; gap: 0.5rem; }
     .pro-nav-buttons { flex-direction: column; align-items: center; }
     .buttons { gap: 2rem; }
+    .popup-box { padding: 1.8rem; }
   }
 
-  
+.proBtn {
+  position: relative;
+}
+
+.proBtn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border: 1px solid var(--blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.45s ease;
+}
+
+.proBtn:hover::before {
+  transform: scaleX(1);
+}
