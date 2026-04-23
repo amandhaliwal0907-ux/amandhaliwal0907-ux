@@ -138,8 +138,6 @@
       </div>
     </section>
 
-       
-
     <!-- experience -->
 <section id="experience" class="pro-section">
   <p class="section-label">02 / Experience</p>
@@ -176,8 +174,8 @@
         <p class="project-name">Conversational AI for Emergency Checklists (Client Project)</p>
         <p class="project-stack">React · Supabase · OpenAI · Python</p>
         <p class="project-desc">
-          Full-stack AI system built for Innomergence Solutions to convert static emergency checklists into structured, machine-interpretable workflows. 
-          The platform supports voice and text interaction, dual-model script generation with automated cross-validation, and Runway AI integration for generating verified training videos. 
+          Full-stack AI system built for Innomergence Solutions to convert static emergency checklists into structured, machine-interpretable workflows.
+          The platform supports voice and text interaction, dual-model script generation with automated cross-validation, and Runway AI integration for generating verified training videos.
           The system was designed as a working prototype intended for real organizational use, with ongoing discussions around further expansion and adoption.
         </p>
         <p class="project-date">Jan 2026 - Apr 2026</p>
@@ -190,8 +188,8 @@
         <p class="project-name">SQLi Scout (Open-Source Security Tool)</p>
         <p class="project-stack">Python · PyQt5 · Docker · PyInstaller</p>
         <p class="project-desc">
-          Zero-install SQL injection scanner with a graphical interface designed for developers without security expertise. 
-          The tool implements four detection methods across multiple database dialects and has identified 78 confirmed vulnerabilities in OWASP Juice Shop with zero false positives. 
+          Zero-install SQL injection scanner with a graphical interface designed for developers without security expertise.
+          The tool implements four detection methods across multiple database dialects and has identified 78 confirmed vulnerabilities in OWASP Juice Shop with zero false positives.
           It is fully open-source, available on GitHub for download and local execution, with ongoing updates and feature improvements planned.
         </p>
         <p class="project-date">Jan 2026 - Present</p>
@@ -204,8 +202,8 @@
         <p class="project-name">Employment Outcomes Predictor</p>
         <p class="project-stack">Python · scikit-learn · pandas · SMOTE</p>
         <p class="project-desc">
-          Binary classification system built on Statistics Canada Labour Force Survey data to predict employment outcomes for young Canadians. 
-          The project is currently being expanded in collaboration with a professor into a full platform, including a Java Spring Boot REST API wrapper around the existing model, a PostgreSQL database for storing predictions and inputs, and an LLM-based layer to generate natural language explanations for individual prediction outcomes. 
+          Binary classification system built on Statistics Canada Labour Force Survey data to predict employment outcomes for young Canadians.
+          The project is currently being expanded in collaboration with a professor into a full platform, including a Java Spring Boot REST API wrapper around the existing model, a PostgreSQL database for storing predictions and inputs, and an LLM-based layer to generate natural language explanations for individual prediction outcomes.
           Future work includes a dashboard interface for analytics and model interpretability.
         </p>
         <p class="project-date">Jan 2026 - Present</p>
@@ -218,8 +216,8 @@
         <p class="project-name">League of Legends Win Predictor</p>
         <p class="project-stack">Python · scikit-learn · pandas</p>
         <p class="project-desc">
-          Machine learning system trained on 80,000 ranked matches using Riot Games API data to predict game outcomes. 
-          Beyond prediction accuracy, the project focuses on feature-level insight into gameplay strategy. 
+          Machine learning system trained on 80,000 ranked matches using Riot Games API data to predict game outcomes.
+          Beyond prediction accuracy, the project focuses on feature-level insight into gameplay strategy.
           Analysis showed that deaths and assists were stronger predictors of winning than kills, highlighting the importance of team coordination over individual performance metrics.
         </p>
         <p class="project-date">Sep 2025 - Dec 2025</p>
@@ -371,16 +369,16 @@
     <h2 class="popup-title">SQLi Scout</h2>
     <p class="popup-stack">Python · PyQt5 · Docker · PyInstaller</p>
     <div class="popup-divider"></div>
- 
+
     <p class="popup-section-title">Overview</p>
     <p class="popup-text">A zero-install SQL injection vulnerability scanner with a full GUI. Built to make professional-grade security testing accessible to developers without a security background. Ships as a standalone Windows executable compiled with PyInstaller, requiring no Python installation on the target machine. Validated against OWASP Juice Shop 17.1.1 with 78 vulnerabilities confirmed and zero false positives.</p>
- 
+
     <p class="popup-section-title">The Problem</p>
     <p class="popup-text">SQL injection has been a top-ranked web vulnerability for over two decades, yet most deployed applications go untested because the available tools require either a paid license, terminal proficiency, or hands-on security knowledge that small development teams do not have. Burp Suite costs around $449 USD per year and assumes familiarity with HTTP proxy interception. sqlmap is highly capable but requires manual parameter configuration from the command line. There was no lightweight, guided option for developers who just need to know if their application is exposed.</p>
- 
+
     <p class="popup-section-title">Architecture</p>
     <p class="popup-text">SQLi Scout is organized into six Python modules: crawler.py for endpoint discovery, scanner.py for injection detection, payloads.py for the payload and signature library, reporter.py for CLI output formatting, utils.py for shared helper functions, and gui.py for the PyQt5 graphical interface. The scanning backend is entirely independent of the GUI layer, meaning the tool can also be driven as a command-line application. The final deliverable is compiled using PyInstaller into a single Windows executable with all dependencies bundled, keeping the output binary below 100 MB.</p>
- 
+
     <p class="popup-section-title">Key Features</p>
     <ul class="popup-bullets">
       <li>Four detection methods: error-based detection using 36 base payloads and 28 database error signatures, boolean-based blind detection using 12 true/false payload pairs evaluated with a difflib similarity heuristic, time-based blind detection using 27 delay payloads across five database dialects, and union-based data extraction using dynamic column-count probing.</li>
@@ -389,13 +387,13 @@
       <li>Union-based extraction runs a three-step process: ORDER BY escalation to determine the column count, marker injection to identify the reflected column index, and a set of pre-built extraction queries targeting SQLite to retrieve version strings, table names, and credential dumps from the Users table.</li>
       <li>The PyQt5 GUI exposes full scan configuration through a sidebar, displays findings in a live-updating vulnerability table with severity badges, and includes a separate Extracted Data tab for credential dumps. Results can be exported to JSON at any time.</li>
     </ul>
- 
+
     <p class="popup-section-title">Validation Results</p>
     <p class="popup-text">A full-depth scan of OWASP Juice Shop 17.1.1 ran for 30 minutes and 31 seconds, testing 68 endpoints and 99 parameters across all four detection methods. The scanner confirmed 78 vulnerabilities: 75 rated CRITICAL through union-based extraction, 2 rated HIGH through error-based and boolean-based blind detection on the products search and login endpoints, and 1 rated MEDIUM through a time-based timeout. No false positives were recorded across any of the 99 parameters tested.</p>
- 
+
     <p class="popup-section-title">Limitations and Next Steps</p>
     <p class="popup-text">The static crawler does not execute JavaScript, so endpoints loaded dynamically by single-page application frameworks are not discoverable without a headless browser integration. The union extraction queries are currently hardcoded for SQLite and would need to be extended for MySQL, PostgreSQL, and MSSQL. The boolean-based heuristic uses fixed thresholds that can produce false negatives when applications return structurally similar error and success responses. Future development priorities include Playwright integration for JavaScript-rendered endpoints, session management support for authenticated scanning, and a PDF report export feature.</p>
- 
+
     <div class="popup-tags">
       <span class="popup-tag">Python</span>
       <span class="popup-tag">PyQt5</span>
@@ -584,10 +582,8 @@ audio.volume = 0.3;
 funBtn.onmouseenter = () => {
   funBg.style.opacity = "1";
   funVideo.play();
-
   audio.currentTime = 0;
   audio.play();
-
   funBtn.classList.add("redGlow");
 };
 
@@ -595,10 +591,8 @@ funBtn.onmouseleave = () => {
   funBg.style.opacity = "0";
   funVideo.pause();
   funVideo.currentTime = 0;
-
   audio.pause();
   audio.currentTime = 0;
-
   funBtn.classList.remove("redGlow");
 };
 funBtn.onclick = () => { window.location.href="fun/index.html"; };
@@ -608,7 +602,12 @@ const proBtn = document.querySelector(".proBtn");
 const pro = document.getElementById("pro");
 proBtn.onmouseenter = () => { document.getElementById("proBg").style.opacity="1"; document.getElementById("threeCanvas").style.opacity="1"; };
 proBtn.onmouseleave = () => { document.getElementById("proBg").style.opacity="0"; document.getElementById("threeCanvas").style.opacity="0"; };
-proBtn.onclick = () => {
+proBtn.onclick = () => { enterPro(); };
+
+/* ===================== STATE HELPERS ===================== */
+
+// Instantly show the pro section without any wave animation (used on restore)
+function enterPro(skipSave) {
   document.getElementById("landing").style.display="none";
   document.getElementById("smoke").style.display="none";
   document.getElementById("funBg").style.display="none";
@@ -616,7 +615,8 @@ proBtn.onclick = () => {
   document.getElementById("threeCanvas").style.display="none";
   pro.style.display="block";
   requestAnimationFrame(()=>pro.classList.add("visible"));
-};
+  if (!skipSave) sessionStorage.setItem("view", "pro-landing");
+}
 
 /* navigation */
 window.showProSection = function(id){
@@ -626,12 +626,18 @@ window.showProSection = function(id){
   t.classList.add("active");
   requestAnimationFrame(()=>t.classList.add("visible"));
   document.getElementById("pro").scrollTop=0;
+  // save state
+  sessionStorage.setItem("view", "pro-section");
+  sessionStorage.setItem("section", id);
 };
 
 window.showProLanding = function(){
   document.querySelectorAll(".pro-section").forEach(s=>s.classList.remove("active","visible"));
   document.getElementById("pro-landing").style.display="flex";
   document.getElementById("pro").scrollTop=0;
+  // save state
+  sessionStorage.setItem("view", "pro-landing");
+  sessionStorage.removeItem("section");
 };
 
 window.goBackToLanding = function(){
@@ -644,6 +650,9 @@ window.goBackToLanding = function(){
     document.getElementById("proBg").style.display="block";
     document.getElementById("threeCanvas").style.display="block";
     showProLanding();
+    // clear state — user is back on landing
+    sessionStorage.removeItem("view");
+    sessionStorage.removeItem("section");
   },400);
 };
 
@@ -654,12 +663,14 @@ window.openPopup = function(id) {
   requestAnimationFrame(() => {
     requestAnimationFrame(() => popup.classList.add("open"));
   });
+  sessionStorage.setItem("popup", id);
 };
 
 window.closePopup = function(id) {
   const popup = document.getElementById(id);
   popup.classList.remove("open");
   setTimeout(() => { popup.style.display = "none"; }, 300);
+  sessionStorage.removeItem("popup");
 };
 
 window.handlePopupClick = function(e, id) {
@@ -671,6 +682,32 @@ document.addEventListener("keydown", e => {
     document.querySelectorAll(".project-popup.open").forEach(p => closePopup(p.id));
   }
 });
+
+/* ===================== RESTORE STATE ON LOAD ===================== */
+(function restoreState() {
+  const view = sessionStorage.getItem("view");
+  if (!view) return; // landing page, nothing to restore
+
+  if (view === "pro-landing" || view === "pro-section") {
+    // Skip landing, go straight to pro
+    enterPro(true); // true = don't overwrite existing sessionStorage
+
+    if (view === "pro-section") {
+      const section = sessionStorage.getItem("section");
+      if (section) {
+        // Small delay so the pro div is visible before we animate the section in
+        setTimeout(() => {
+          showProSection(section);
+          // If a popup was open, reopen it
+          const popup = sessionStorage.getItem("popup");
+          if (popup) {
+            setTimeout(() => openPopup(popup), 200);
+          }
+        }, 50);
+      }
+    }
+  }
+})();
 </script>
 
 </body>
