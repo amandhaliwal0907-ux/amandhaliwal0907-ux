@@ -1,5 +1,4 @@
 
-document.addEventListener('DOMContentLoaded', () => {
 // navigation and UI logic
 
 window.enterPro = function (skipSave) {
@@ -182,4 +181,3 @@ proBtn.onclick = () => {
     }
   }
 })();
-});
