@@ -57,7 +57,7 @@
   const W = window.innerWidth;
   const H = window.innerHeight;
 
-  const scale = 0.8;
+  const scale = 1;
 
   canvasA.width = W * scale;
   canvasA.height = H * scale;
@@ -142,7 +142,7 @@
     ctxB.restore();
 
     ctxB.save();
-    ctxB.filter = 'blur(3px)';
+    ctxB.filter = 'blur(12px)';
     ctxB.drawImage(canvasA, 0, 0);
     ctxB.restore();
 
