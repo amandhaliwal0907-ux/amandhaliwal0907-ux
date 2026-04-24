@@ -142,7 +142,7 @@
     ctxB.restore();
 
     ctxB.save();
-    ctxB.filter = 'blur(12px)';
+    ctxB.filter = 'blur(3px)';
     ctxB.drawImage(canvasA, 0, 0);
     ctxB.restore();
 
