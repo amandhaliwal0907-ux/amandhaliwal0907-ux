@@ -114,24 +114,24 @@ const audio = document.getElementById('audio');
 audio.volume = 0.3;
 
 funBtn.onmouseenter = () => {
-  funBg.style.opacity = '1';
+  funBg.classList.add("active");
   funVideo.play();
 
   audio.currentTime = 0;
   audio.play();
 
-  funBtn.classList.add('redGlow');
+  funBtn.classList.add("redGlow");
 };
 
 funBtn.onmouseleave = () => {
-  funBg.style.opacity = '0';
+  funBg.classList.remove("active");
   funVideo.pause();
   funVideo.currentTime = 0;
 
   audio.pause();
   audio.currentTime = 0;
 
-  funBtn.classList.remove('redGlow');
+  funBtn.classList.remove("redGlow");
 };
 
 funBtn.onclick = () => {
