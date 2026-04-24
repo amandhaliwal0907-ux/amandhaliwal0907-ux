@@ -53,13 +53,21 @@
   let raf;
   let running   = true;
 
-  function resize() {
-    const W = window.innerWidth, H = window.innerHeight;
-    canvasA.width  = W; canvasA.height = H;
-    canvasB.width  = W; canvasB.height = H;
-    center[0] = W * 0.5;
-    center[1] = H * 0.5;
-  }
+ function resize() {
+  const W = window.innerWidth;
+  const H = window.innerHeight;
+
+  const scale = 0.8;
+
+  canvasA.width = W * scale;
+  canvasA.height = H * scale;
+
+  canvasB.width = W * scale;
+  canvasB.height = H * scale;
+
+  center[0] = (W * scale) * 0.5;
+  center[1] = (H * scale) * 0.5;
+}
 
   function initPipes() {
     pipeProps = new Float32Array(pipePropsLength);
