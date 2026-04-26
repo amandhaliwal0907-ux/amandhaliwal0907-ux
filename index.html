@@ -7,6 +7,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=DM+Mono:ital,wght@0,300;0,400;1,300&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 
+
 <script type="importmap">
 {
   "imports": {
@@ -20,11 +21,20 @@
 <div id="pipelineContainer"></div>
 
 <audio id="audio" src="asong.mp3" preload="auto"></audio>
+<audio id="sharinganAudio" src="sharingan.mp3" preload="auto"></audio>
 
 <div id="funBg">
   <video id="funVideo" muted loop playsinline>
     <source src="akatsuki.mp4" type="video/mp4">
   </video>
+</div>
+
+<!-- itachi intro overlay -->
+<div id="itachiOverlay">
+  <video id="itachiVideo" playsinline>
+    <source src="itachi.mp4" type="video/mp4">
+  </video>
+  <div id="itachiSkip">skip</div>
 </div>
 
 <div id="proBg"></div>
@@ -247,6 +257,107 @@
           <span class="contact-type">GitHub</span>
           <span class="contact-value">amandhaliwal0907-ux</span>
         </a>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- fun / akatsuki section -->
+<div id="fun">
+  <nav class="fun-nav">
+    <span class="fun-nav-name" onclick="showFunLanding()">AD</span>
+    <ul class="fun-nav-links">
+      <li><a onclick="showFunSection('fun-about')">About</a></li>
+      <li><a onclick="showFunSection('fun-interests')">Interests</a></li>
+      <li><a onclick="showFunSection('fun-gaming')">Gaming</a></li>
+    </ul>
+    <button class="fun-nav-back" onclick="goBackFromFun()">Back</button>
+  </nav>
+
+  <div class="fun-inner">
+
+    <div id="fun-landing">
+      <p class="fun-eyebrow">// not the professional page</p>
+      <h2 class="fun-landing-title">Aman Dhaliwal</h2>
+      <p class="fun-landing-sub">The actual one</p>
+      <div class="fun-nav-buttons">
+        <button class="fun-nav-btn" onclick="showFunSection('fun-about')">About</button>
+        <button class="fun-nav-btn" onclick="showFunSection('fun-interests')">Interests</button>
+        <button class="fun-nav-btn" onclick="showFunSection('fun-gaming')">Gaming</button>
+      </div>
+    </div>
+
+    <!-- about -->
+    <section id="fun-about" class="fun-section">
+      <p class="fun-section-label">01 / About</p>
+      <h2 class="fun-section-title">Who I Actually Am</h2>
+      <div class="fun-divider"></div>
+      <div class="fun-about-grid">
+        <div class="fun-about-bio">
+          <p>Computing Science grad who spends too much time at a computer and not enough pretending he doesn't.</p>
+          <p>I spend way too much time up at night gaming or fixing code.</p>
+          <p>Competitive in everything. Gaming, gym, arguments about anime. If there is a ranking system I am trying to climb it.</p>
+          <p>More to come here. This page is a work in progress.</p>
+        </div>
+        <div class="fun-about-details">
+          <div class="fun-detail-block">
+            <p class="fun-detail-label">Location</p>
+            <p class="fun-detail-value">BC, Canada</p>
+          </div>
+          <div class="fun-detail-block">
+            <p class="fun-detail-label">Currently</p>
+            <p class="fun-detail-value">Building stuff, watching anime, gaming.</p>
+          </div>
+          <div class="fun-detail-block">
+            <p class="fun-detail-label">Favourite arc</p>
+            <p class="fun-detail-value fun-red">Pain's Assault</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- interests -->
+    <section id="fun-interests" class="fun-section">
+      <p class="fun-section-label">02 / Interests</p>
+      <h2 class="fun-section-title">Off the Clock</h2>
+      <div class="fun-divider"></div>
+      <div class="fun-interests-grid">
+        <div class="fun-interest-card">
+          <p class="fun-interest-title">Anime</p>
+          <p class="fun-interest-desc">Naruto, Angel Beats, Jujutsu Kaisen.</p>
+        </div>
+        <div class="fun-interest-card">
+          <p class="fun-interest-title">Gym</p>
+          <p class="fun-interest-desc">Consistent. Currently Cutting</p>
+        </div>
+        <div class="fun-interest-card">
+          <p class="fun-interest-title">Gaming</p>
+          <p class="fun-interest-desc">Mostly play League of Legends, CS2, Rust.</p>
+        </div>
+        <div class="fun-interest-card">
+          <p class="fun-interest-title">Building</p>
+          <p class="fun-interest-desc">Side projects that I'm currently struggling on.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- gaming -->
+    <section id="fun-gaming" class="fun-section">
+      <p class="fun-section-label">03 / Gaming</p>
+      <h2 class="fun-section-title">Stats</h2>
+      <div class="fun-divider"></div>
+      <div class="fun-gaming-grid">
+        <div class="fun-stat-card">
+          <p class="fun-stat-game">League of Legends</p>
+          <p class="fun-stat-rank">Master</p>
+          <p class="fun-stat-desc">ADC and Jungle Main</p>
+        </div>
+        <div class="fun-stat-card">
+          <p class="fun-stat-game">CS2</p>
+          <p class="fun-stat-rank">Faceit Level 9</p>
+          <p class="fun-stat-desc">AWP crutch</p>
+        </div>
       </div>
     </section>
 
