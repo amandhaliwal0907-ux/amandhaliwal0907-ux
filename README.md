@@ -26,8 +26,6 @@ Outside of that I play League of Legends at Master rank and CS2 at Faceit Level 
 
 [![Stats](https://github-profile-summary-cards.vercel.app/api/cards/stats?username=amandhaliwal0907-ux&theme=holi)](https://github.com/amandhaliwal0907-ux)
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=amandhaliwal0907-ux&langs_count=6&theme=tokyonight&bg_color=0d1117&title_color=33ccff&hide_border=true)](https://github.com/amandhaliwal0907-ux)
-
 ---
 
 **Languages**
